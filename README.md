@@ -2,7 +2,7 @@
 
 A public-facing version of Cassie's personal database format, focused on shareable skills, prompts, and small AI workflows.
 
-Live site: coming soon
+Live site: <https://personal-database-public.vercel.app/#skills>
 
 ## What is inside
 
