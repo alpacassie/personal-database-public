@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A public index of Cassie's skills, prompts, and small AI workflows." />
+    <title>Cassie's Public Database</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page" id="top">
+      <nav class="database-nav" id="databaseNav" aria-label="Public databases"></nav>
+
+      <header class="page-header">
+        <div class="header-copy">
+          <p class="eyebrow">Cassie's public database</p>
+          <h1 id="pageTitle">Skills</h1>
+          <p id="pageIntro" class="intro">
+            A shareable index of practical AI, analytics, and creative workflows.
+          </p>
+        </div>
+        <div class="header-mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p class="count"><span id="totalCount">0</span> entries</p>
+      </header>
+
+      <section class="controls" aria-label="Database controls">
+        <label class="search-field">
+          <span class="sr-only">Search database</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" /></svg>
+          <input id="searchInput" type="search" placeholder="Search skills" autocomplete="off" />
+        </label>
+
+        <label class="sort-field">
+          <span>Sort by</span>
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+        </label>
+
+        <nav class="category-tabs" id="categoryTabs" aria-label="Filters"></nav>
+      </section>
+
+      <div class="table-wrap">
+        <table>
+          <thead id="tableHead"></thead>
+          <tbody id="tableRows"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState" hidden><p>No matching entries.</p></div>
+      </div>
+
+      <footer>
+        <span id="sourceNote">Public examples only · no private notes</span>
+        <button id="backToTop" type="button">Back to top</button>
+      </footer>
+    </main>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
