@@ -1,13 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">Cassie's Public Database</title>
   <desc id="desc">A public index of small personal databases, prompts, and AI workflows.</desc>
-  <rect width="1200" height="630" fill="#f7f7f5"/>
-  <rect x="76" y="72" width="1048" height="486" rx="28" fill="#ffffff" stroke="#deded8" stroke-width="2"/>
-  <circle cx="102" cy="104" r="8" fill="#11110f"/>
-  <circle cx="130" cy="104" r="8" fill="#647467"/>
-  <circle cx="158" cy="104" r="8" fill="#e8cf76"/>
-  <text x="118" y="246" fill="#74746f" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500">public database</text>
-  <text x="118" y="336" fill="#1d1d1a" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="600">Cassie's Public</text>
-  <text x="118" y="424" fill="#1d1d1a" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="600">Database</text>
-  <text x="118" y="494" fill="#74746f" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400">Small personal databases, prompts, and AI workflows.</text>
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <text x="48" y="170" fill="#74746f" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="400">Cassie's public database</text>
+  <text x="48" y="374" fill="#1d1d1a" font-family="Inter, Arial, sans-serif" font-size="204" font-weight="600">Skills</text>
+  <text x="48" y="505" fill="#74746f" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="400">Small, reusable ways to build personal databases.</text>
 </svg>
