@@ -282,28 +282,15 @@ tbody tr:hover { background: var(--hover); }
   background: var(--text);
 }
 
-.download-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 112px;
-  height: 34px;
-  padding: 0 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+.download-link {
   color: var(--text);
-  background: var(--surface);
-  cursor: pointer;
   font-size: 13px;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   white-space: nowrap;
 }
 
-.download-button:hover {
-  color: white;
-  border-color: var(--text);
-  background: var(--text);
-}
+.download-link:hover { color: var(--muted); }
 
 .empty-state {
   padding: 64px 20px;

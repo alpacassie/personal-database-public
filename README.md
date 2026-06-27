@@ -7,7 +7,7 @@ Live site: <https://personal-database-public.vercel.app/#skills>
 ## What is inside
 
 - Wardrobe database starter
-- Skills database
+- Template downloads
 - Prompt database with copy-ready prompts
 - Workflow database for small repeatable systems
 

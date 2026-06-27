@@ -17,13 +17,13 @@ const databaseConfig = {
     defaultSort: "wardrobe"
   },
   skills: {
-    title: "Skills",
+    title: "Templates",
     intro: "A small place for downloadable personal database starters.",
-    search: "Search skills",
-    allLabel: "all skills",
+    search: "Search templates",
+    allLabel: "all templates",
     filterKey: "category",
     columns: [
-      { label: "Skill", key: "name", primary: true },
+      { label: "Template", key: "name", primary: true },
       { label: "Use", key: "summary", detail: true },
       { label: "Download", key: "download", download: true }
     ],
@@ -179,7 +179,7 @@ function renderCell(row, column) {
   }
 
   if (column.download) {
-    return `<td class="action-cell"><a class="download-button" href="${escapeHtml(row[column.key])}" download>Download <span aria-hidden="true">&darr;</span></a></td>`;
+    return `<td class="action-cell"><a class="download-link" href="${escapeHtml(row[column.key])}" download>Download <span aria-hidden="true">&darr;</span></a></td>`;
   }
 
   if (column.tags) {
