@@ -8,6 +8,7 @@ Live site: <https://personal-database-public.vercel.app/#skills>
 
 - Skills index
 - Wardrobe database skill
+- Prompt library
 
 ## Skills
 
@@ -24,6 +25,8 @@ Simple flow:
 5. Type `/` and the skill name in chat to trigger it.
 
 The wardrobe skill includes Google Sheets, Notion, Supabase, prompt, and local website starters.
+
+The prompt tab is for people who want to try the wardrobe workflow without installing the skill.
 
 ## Run locally
 

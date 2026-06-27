@@ -1,4 +1,4 @@
-const databaseOrder = ["skills"];
+const databaseOrder = ["skills", "prompts"];
 
 const databaseConfig = {
   skills: {
@@ -11,6 +11,19 @@ const databaseConfig = {
       { label: "Skill", key: "name", primary: true },
       { label: "Use", key: "summary", detail: true },
       { label: "Download", key: "download", download: true }
+    ],
+    controls: false
+  },
+  prompts: {
+    title: "Prompts",
+    intro: "Copy-ready prompts for building small personal databases without installing a skill.",
+    search: "Search prompts",
+    allLabel: "all prompts",
+    filterKey: "category",
+    columns: [
+      { label: "Prompt", key: "name", primary: true },
+      { label: "Use", key: "summary", detail: true },
+      { label: "Copy", key: "prompt", copy: true }
     ],
     controls: false
   }
@@ -38,7 +51,7 @@ const backToTop = document.querySelector("#backToTop");
 
 function getDatabaseFromHash() {
   const name = window.location.hash.replace("#", "");
-  return databaseOrder.includes(name) ? name : "wardrobe";
+  return databaseOrder.includes(name) ? name : "skills";
 }
 
 function escapeHtml(value = "") {
