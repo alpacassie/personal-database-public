@@ -7,7 +7,7 @@ Live site: <https://personal-database-public.vercel.app/#skills>
 ## What is inside
 
 - Wardrobe database starter
-- Template downloads
+- Wardrobe database skill
 - Prompt database with copy-ready prompts
 - Workflow database for small repeatable systems
 
@@ -35,4 +35,4 @@ The Supabase starter SQL is in `supabase/wardrobe.sql`.
 python3 -m http.server 5002
 ```
 
-Then open <http://127.0.0.1:5002/#wardrobe>.
+Then open <http://127.0.0.1:5002/#skills>.

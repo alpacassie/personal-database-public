@@ -107,9 +107,9 @@ window.PUBLIC_DATABASE_DATA = {
   ],
   skills: [
     {
-      name: "Wardrobe Database",
+      name: "Create a Wardrobe Database",
       category: "database",
-      summary: "Build a simple wardrobe database.",
+      summary: "Turn clothes into a simple, searchable Supabase table.",
       download: "./supabase/wardrobe.sql",
       featured: 1
     }

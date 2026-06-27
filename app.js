@@ -17,13 +17,13 @@ const databaseConfig = {
     defaultSort: "wardrobe"
   },
   skills: {
-    title: "Templates",
-    intro: "A small place for downloadable personal database starters.",
-    search: "Search templates",
-    allLabel: "all templates",
+    title: "Skills",
+    intro: "Small, reusable ways to build personal databases.",
+    search: "Search skills",
+    allLabel: "all skills",
     filterKey: "category",
     columns: [
-      { label: "Template", key: "name", primary: true },
+      { label: "Skill", key: "name", primary: true },
       { label: "Use", key: "summary", detail: true },
       { label: "Download", key: "download", download: true }
     ],
