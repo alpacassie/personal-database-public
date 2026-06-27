@@ -9,9 +9,15 @@ const typeOrder = {
 const subtypeOrder = {
   tank: 1,
   "baby tee": 2,
-  shirt: 3,
-  blouse: 3,
-  "button-down": 3
+  "strapless top": 2,
+  top: 3,
+  shirt: 4,
+  blouse: 4,
+  "button-down": 4,
+  shorts: 5,
+  pants: 6,
+  cardigan: 7,
+  dress: 8
 };
 
 function parseCsv(text) {

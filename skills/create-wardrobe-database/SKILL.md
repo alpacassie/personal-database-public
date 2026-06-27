@@ -5,7 +5,7 @@ description: Use when someone wants to turn clothing items into a simple wardrob
 
 # Create a Wardrobe Database
 
-Help the user turn clothes into a simple, searchable wardrobe system and a small website they can run locally or publish.
+Help the user turn clothes into a simple wardrobe system and a small website they can run locally or publish.
 
 ## Start here
 
@@ -60,6 +60,7 @@ Use this simple shape:
 - Photos are useful for recognizable pieces, colors, and categories.
 - A plain typed list is enough for a first version.
 - Do not overbuild. Start with the 18 core pieces, then add more later.
+- Simple and chic means quiet, table-first, and faithful to the starter style.
 
 ## Website workflow
 
@@ -69,6 +70,15 @@ For a local website:
 2. Replace `wardrobe.csv` with their wardrobe rows.
 3. Run a local static server from the site folder.
 4. Open the local URL and verify the table renders.
+
+### Website style guardrails
+
+- Follow the `assets/site-starter` style unless the user explicitly asks for a redesign.
+- Keep the first website as a simple table, not a dashboard.
+- Do not add color palettes, swatch filters, search controls, segmented filters, background grids, extra cards, or decorative UI unless the user asks for them.
+- Only make minimal copy changes such as title, intro, or table labels when they clarify the data.
+- If adding a feature, explain the tradeoff first and keep the default version close to the starter.
+- Before calling the site done, verify that the page has no unrequested controls and that the row count matches the wardrobe data.
 
 For a live website:
 
