@@ -9,6 +9,12 @@ Help the user turn clothes into a simple, searchable wardrobe system and a small
 
 ## Start here
 
+Ask the user to choose a wardrobe framework first.
+
+- Recommend starting with an 18-piece wardrobe framework.
+- Tell them they can add more pieces later.
+- Keep the first version small enough to finish.
+
 Ask which format they want:
 
 - Google Sheets
@@ -39,12 +45,21 @@ Use this simple shape:
 
 ## Workflow
 
-1. Ask the user to paste a rough list of clothes.
-2. Clean the list into rows.
-3. Keep names short and human.
-4. Sort in closet order: tops, bottoms, outerwear, dresses, shoes.
-5. Give the user the right output for their tool.
-6. If they want a site, use `assets/site-starter` and populate `wardrobe.csv`.
+1. Choose the wardrobe framework. Start with 18 pieces unless the user already has a clear structure.
+2. Pull purchase data if available. If the user has connected Gmail and approves, search purchase emails for clothing orders, brands, product names, prices, and dates.
+3. If purchase data is not available, ask for a rough clothing list or photos of items worth adding.
+4. Clean the source material into rows.
+5. Keep names short and human.
+6. Sort in closet order: tops, bottoms, outerwear, dresses, shoes.
+7. Give the user the right output for their tool.
+8. After the database exists, use `assets/site-starter` and populate `wardrobe.csv` if they want a site.
+
+## Source guidance
+
+- Gmail purchases are useful for brand and product names, but do not require Gmail.
+- Photos are useful for recognizable pieces, colors, and categories.
+- A plain typed list is enough for a first version.
+- Do not overbuild. Start with the 18 core pieces, then add more later.
 
 ## Website workflow
 
