@@ -1,18 +1,33 @@
-const databaseOrder = ["skills", "prompts", "workflows"];
+const databaseOrder = ["wardrobe", "skills", "prompts", "workflows"];
 
 const databaseConfig = {
+  wardrobe: {
+    title: "Wardrobe",
+    intro: "A simple closet database for seeing what you own, what is capsule-worthy, and what is missing.",
+    search: "Search wardrobe",
+    allLabel: "all pieces",
+    filterKey: "type",
+    columns: [
+      { label: "Item", key: "name", primary: true },
+      { label: "Brand", key: "brand" },
+      { label: "Capsule", key: "capsule", format: "boolean" },
+      { label: "Type", key: "type", format: "label" },
+      { label: "Notes", key: "notes", detail: true, mobile: false }
+    ],
+    defaultSort: "wardrobe"
+  },
   skills: {
     title: "Skills",
-    intro: "A shareable index of practical AI, analytics, and creative workflows.",
+    intro: "A small place for downloadable personal database starters.",
     search: "Search skills",
     allLabel: "all skills",
     filterKey: "category",
     columns: [
       { label: "Skill", key: "name", primary: true },
       { label: "Use", key: "summary", detail: true },
-      { label: "Tags", key: "tags", tags: true },
-      { label: "Level", key: "level", format: "label", mobile: false }
-    ]
+      { label: "Download", key: "download", download: true }
+    ],
+    controls: false
   },
   prompts: {
     title: "Prompts",
@@ -64,7 +79,7 @@ const backToTop = document.querySelector("#backToTop");
 
 function getDatabaseFromHash() {
   const name = window.location.hash.replace("#", "");
-  return databaseOrder.includes(name) ? name : "skills";
+  return databaseOrder.includes(name) ? name : "wardrobe";
 }
 
 function escapeHtml(value = "") {
@@ -99,6 +114,11 @@ function renderNav() {
 
 function renderFilters(rows) {
   const config = getConfig();
+  if (config.controls === false) {
+    categoryTabs.innerHTML = "";
+    return;
+  }
+
   const values = [...new Set(rows.map((row) => row[config.filterKey]).filter(Boolean))].sort();
   const buttons = [{ value: "all", label: config.allLabel }, ...values.map((value) => ({ value, label: formatLabel(value) }))];
 
@@ -121,6 +141,11 @@ function sortRows(rows) {
   return [...rows].sort((a, b) => {
     if (state.sort === "az") return a.name.localeCompare(b.name);
     if (state.sort === "za") return b.name.localeCompare(a.name);
+    if (getConfig().defaultSort === "wardrobe") {
+      return (a.type_order || 999) - (b.type_order || 999)
+        || (a.subtype_order || 999) - (b.subtype_order || 999)
+        || a.name.localeCompare(b.name);
+    }
     return (a.featured || 999) - (b.featured || 999);
   });
 }
@@ -139,7 +164,9 @@ function filterRows(rows) {
 
 function renderHead() {
   const columns = getConfig().columns;
-  tableHead.innerHTML = `<tr>${columns.map((column) => `<th>${escapeHtml(column.label)}</th>`).join("")}</tr>`;
+  tableHead.innerHTML = `<tr>${columns
+    .map((column) => `<th class="${column.mobile === false ? "hide-mobile" : ""}">${escapeHtml(column.label)}</th>`)
+    .join("")}</tr>`;
 }
 
 function renderTags(tags = []) {
@@ -151,11 +178,16 @@ function renderCell(row, column) {
     return `<td class="action-cell"><button class="copy-button" type="button" data-copy="${escapeHtml(row[column.key])}">Copy</button></td>`;
   }
 
+  if (column.download) {
+    return `<td class="action-cell"><a class="download-button" href="${escapeHtml(row[column.key])}" download>Download <span aria-hidden="true">&darr;</span></a></td>`;
+  }
+
   if (column.tags) {
     return `<td class="tag-cell">${renderTags(row[column.key] || [])}</td>`;
   }
 
-  const value = column.format === "label" ? formatLabel(row[column.key]) : row[column.key];
+  let value = column.format === "label" ? formatLabel(row[column.key]) : row[column.key];
+  if (column.format === "boolean") value = row[column.key] ? "Yes" : "No";
   const classNames = [
     column.primary ? "primary-cell" : "",
     column.detail ? "detail-cell" : "",
@@ -183,6 +215,7 @@ function render() {
   pageIntro.textContent = config.intro;
   searchInput.placeholder = config.search;
   totalCount.textContent = visibleRows.length;
+  document.querySelector(".controls").hidden = config.controls === false;
 
   renderNav();
   renderFilters(rows);

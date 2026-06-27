@@ -58,7 +58,7 @@ button, input, select { color: inherit; font: inherit; }
 .page-header {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
   gap: 28px;
   margin: 56px 0 44px;
@@ -90,25 +90,6 @@ h1 {
   color: var(--muted);
   font-size: 14px;
 }
-
-.header-mark {
-  display: grid;
-  grid-template-columns: repeat(3, 28px);
-  gap: 8px;
-  align-self: center;
-}
-
-.header-mark span {
-  width: 28px;
-  height: 72px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-}
-
-.header-mark span:nth-child(1) { background: var(--ink); }
-.header-mark span:nth-child(2) { background: var(--sage); }
-.header-mark span:nth-child(3) { background: var(--butter); }
 
 .controls {
   display: grid;
@@ -301,6 +282,29 @@ tbody tr:hover { background: var(--hover); }
   background: var(--text);
 }
 
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.download-button:hover {
+  color: white;
+  border-color: var(--text);
+  background: var(--text);
+}
+
 .empty-state {
   padding: 64px 20px;
   color: var(--muted);
@@ -352,16 +356,6 @@ footer button:hover { color: var(--text); }
     grid-template-columns: 1fr;
     gap: 18px;
     margin: 42px 0 34px;
-  }
-
-  .header-mark {
-    grid-template-columns: repeat(3, 22px);
-    order: -1;
-  }
-
-  .header-mark span {
-    width: 22px;
-    height: 44px;
   }
 
   .count { justify-self: start; }

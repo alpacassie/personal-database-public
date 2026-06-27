@@ -1,58 +1,117 @@
 window.PUBLIC_DATABASE_DATA = {
+  wardrobe: [
+    {
+      name: "white tank",
+      product_name: "Ribbed cotton tank",
+      brand: "Example Studio",
+      type: "top",
+      subtype: "tank",
+      color: "white",
+      season: "summer",
+      capsule: true,
+      notes: "Clean base layer for warm-weather outfits.",
+      type_order: 1,
+      subtype_order: 1
+    },
+    {
+      name: "black baby tee",
+      product_name: "Fitted short-sleeve tee",
+      brand: "Everyday Label",
+      type: "top",
+      subtype: "baby tee",
+      color: "black",
+      season: "all-season",
+      capsule: true,
+      notes: "Useful with denim, skirts, trousers, and under jackets.",
+      type_order: 1,
+      subtype_order: 2
+    },
+    {
+      name: "blue button-down",
+      product_name: "Relaxed cotton shirt",
+      brand: "Market Sample",
+      type: "top",
+      subtype: "shirt",
+      color: "blue stripe",
+      season: "all-season",
+      capsule: true,
+      notes: "A polished layer that still feels casual.",
+      type_order: 1,
+      subtype_order: 3
+    },
+    {
+      name: "black trousers",
+      product_name: "Straight-leg trouser",
+      brand: "Example Studio",
+      type: "bottom",
+      subtype: "pants",
+      color: "black",
+      season: "all-season",
+      capsule: true,
+      notes: "Anchor piece for work, dinners, and travel.",
+      type_order: 2,
+      subtype_order: 1
+    },
+    {
+      name: "denim shorts",
+      product_name: "High-rise denim short",
+      brand: "Denim Sample",
+      type: "bottom",
+      subtype: "shorts",
+      color: "medium blue",
+      season: "summer",
+      capsule: false,
+      notes: "Good seasonal piece; less essential year-round.",
+      type_order: 2,
+      subtype_order: 1
+    },
+    {
+      name: "linen jacket",
+      product_name: "Lightweight linen jacket",
+      brand: "Market Sample",
+      type: "outerwear",
+      subtype: "jacket",
+      color: "natural",
+      season: "summer",
+      capsule: true,
+      notes: "Light structure without feeling too formal.",
+      type_order: 3,
+      subtype_order: 1
+    },
+    {
+      name: "black slip dress",
+      product_name: "Midi slip dress",
+      brand: "Occasion Label",
+      type: "dress",
+      subtype: "dress",
+      color: "black",
+      season: "all-season",
+      capsule: true,
+      notes: "Easy dinner, travel, and event piece.",
+      type_order: 4,
+      subtype_order: 1
+    },
+    {
+      name: "silver flats",
+      product_name: "Leather ballet flat",
+      brand: "Shoe Sample",
+      type: "shoes",
+      subtype: "flats",
+      color: "silver",
+      season: "all-season",
+      capsule: true,
+      notes: "Adds polish without needing a heel.",
+      type_order: 5,
+      subtype_order: 1
+    }
+  ],
   skills: [
     {
-      name: "Research Brief",
-      category: "research",
-      level: "intermediate",
-      summary: "Turn scattered links, notes, and questions into a clean brief with claims, sources, and open questions.",
-      tags: ["AI", "analysis", "writing"],
-      use: "Good for market maps, company research, creator ideas, and decision memos.",
+      name: "Wardrobe Database",
+      category: "database",
+      summary: "Build a simple wardrobe database.",
+      download: "./supabase/wardrobe.sql",
       featured: 1
-    },
-    {
-      name: "Database Cleanup",
-      category: "data",
-      level: "advanced",
-      summary: "Audit a table, find duplicates or messy fields, and propose a simpler schema before changing anything.",
-      tags: ["Supabase", "SQL", "systems"],
-      use: "Good for personal CRMs, finance ledgers, wardrobe tables, and content databases.",
-      featured: 2
-    },
-    {
-      name: "Content Angle Builder",
-      category: "content",
-      level: "beginner",
-      summary: "Convert a messy idea into hooks, script beats, visual ideas, and captions.",
-      tags: ["content", "taste", "media"],
-      use: "Good for short-form video, carousels, newsletters, and thought-leadership drafts.",
-      featured: 3
-    },
-    {
-      name: "Prompt Refinement",
-      category: "AI",
-      level: "beginner",
-      summary: "Rewrite a vague request into a precise prompt with context, constraints, output shape, and examples.",
-      tags: ["AI", "prompting", "workflow"],
-      use: "Good when the first AI output is generic, too long, or not in the right voice.",
-      featured: 4
-    },
-    {
-      name: "Launch Checklist",
-      category: "web",
-      level: "intermediate",
-      summary: "Check links, deployment status, repo naming, README, mobile layout, and public/private boundaries.",
-      tags: ["Vercel", "GitHub", "QA"],
-      use: "Good before sharing a project with friends, collaborators, or a hiring manager.",
-      featured: 5
-    },
-    {
-      name: "Obsidian Capture",
-      category: "knowledge",
-      level: "intermediate",
-      summary: "Turn a long conversation or rough note into a durable project note with angles and next steps.",
-      tags: ["notes", "systems", "writing"],
-      use: "Good for keeping personal knowledge useful without overbuilding the system.",
-      featured: 6
     }
   ],
   prompts: [
