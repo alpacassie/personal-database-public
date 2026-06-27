@@ -106,9 +106,13 @@ h1 {
 }
 
 .usage-panel code {
-  color: var(--text);
-  font-family: inherit;
-  font-size: 13px;
+  padding: 1px 5px;
+  border: 1px solid #ead1ca;
+  border-radius: 5px;
+  color: #9b3f2f;
+  background: #fff4f1;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12px;
 }
 
 .controls {
