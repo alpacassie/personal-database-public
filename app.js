@@ -27,7 +27,15 @@ const databaseConfig = {
       { label: "Use", key: "summary", detail: true },
       { label: "Download", key: "download", download: true }
     ],
-    controls: false
+    controls: false,
+    stepsTitle: "How to use",
+    steps: [
+      "Download the skill.",
+      "Unzip the folder.",
+      "ChatGPT/Codex: Skills, New skill, Upload from your computer.",
+      "Claude Code: move the folder to ~/.claude/skills/.",
+      "Ask it to build your wardrobe database for Google Sheets, Notion, or Supabase."
+    ]
   },
   prompts: {
     title: "Prompts",
@@ -76,6 +84,9 @@ const tableHead = document.querySelector("#tableHead");
 const tableRows = document.querySelector("#tableRows");
 const emptyState = document.querySelector("#emptyState");
 const backToTop = document.querySelector("#backToTop");
+const stepsSection = document.querySelector("#stepsSection");
+const stepsTitle = document.querySelector("#stepsTitle");
+const stepsList = document.querySelector("#stepsList");
 
 function getDatabaseFromHash() {
   const name = window.location.hash.replace("#", "");
@@ -205,6 +216,16 @@ function renderRows(rows) {
   emptyState.hidden = rows.length > 0;
 }
 
+function renderSteps() {
+  const config = getConfig();
+  const steps = config.steps || [];
+  stepsSection.hidden = steps.length === 0;
+  if (!steps.length) return;
+
+  stepsTitle.textContent = config.stepsTitle || "How to use";
+  stepsList.innerHTML = steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("");
+}
+
 function render() {
   const config = getConfig();
   const rows = getRows();
@@ -221,6 +242,7 @@ function render() {
   renderFilters(rows);
   renderHead();
   renderRows(visibleRows);
+  renderSteps();
 }
 
 window.addEventListener("hashchange", () => {

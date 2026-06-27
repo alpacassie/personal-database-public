@@ -15,6 +15,16 @@ Live site: <https://personal-database-public.vercel.app/#skills>
 
 If someone wants to build their own wardrobe database, send them this repo and the `#skills` page.
 
+The download is an installable skill folder. After adding it to ChatGPT/Codex or Claude Code, they can ask it to create a wardrobe database for Google Sheets, Notion, or Supabase.
+
+Simple flow:
+
+1. Download the skill.
+2. Unzip the folder.
+3. ChatGPT/Codex: Skills, New skill, Upload from your computer.
+4. Claude Code: move the folder to `~/.claude/skills/`.
+5. Ask it to build your wardrobe database.
+
 The starter keeps the schema intentionally small:
 
 - `name`: the simple name you would actually use
@@ -27,7 +37,7 @@ The starter keeps the schema intentionally small:
 - `capsule`: whether it belongs in the core closet
 - `notes`
 
-The Supabase starter SQL is in `supabase/wardrobe.sql`.
+The skill includes Google Sheets, Notion, Supabase, and prompt starters.
 
 ## Run locally
 

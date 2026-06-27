@@ -1,0 +1,10 @@
+Help me turn this rough clothing list into a simple wardrobe database.
+
+Use these columns:
+name, product_name, brand, type, subtype, color, season, capsule, notes
+
+Keep names short and human. Use type values: top, bottom, outerwear, dress, shoes.
+Sort the final rows in closet order: tops, bottoms, outerwear, dresses, shoes.
+
+My clothes:
+[paste list here]
