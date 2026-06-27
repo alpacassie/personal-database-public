@@ -34,7 +34,9 @@ const databaseConfig = {
       "Unzip the folder.",
       "ChatGPT/Codex: Skills, New skill, Upload from your computer.",
       "Claude Code: move the folder to ~/.claude/skills/.",
-      "Ask it to build your wardrobe database for Google Sheets, Notion, or Supabase."
+      "Ask it to build your wardrobe database for Google Sheets, Notion, or Supabase.",
+      "Ask it to make the local wardrobe site using your data.",
+      "If you want it live, deploy the site folder with Vercel or another static host."
     ]
   },
   prompts: {

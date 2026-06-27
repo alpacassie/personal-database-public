@@ -15,7 +15,7 @@ Live site: <https://personal-database-public.vercel.app/#skills>
 
 If someone wants to build their own wardrobe database, send them this repo and the `#skills` page.
 
-The download is an installable skill folder. After adding it to ChatGPT/Codex or Claude Code, they can ask it to create a wardrobe database for Google Sheets, Notion, or Supabase.
+The download is an installable skill folder. After adding it to ChatGPT/Codex or Claude Code, they can ask it to create a wardrobe database for Google Sheets, Notion, or Supabase, then turn that data into a small wardrobe website.
 
 Simple flow:
 
@@ -24,6 +24,8 @@ Simple flow:
 3. ChatGPT/Codex: Skills, New skill, Upload from your computer.
 4. Claude Code: move the folder to `~/.claude/skills/`.
 5. Ask it to build your wardrobe database.
+6. Ask it to make the local wardrobe site using your data.
+7. If you want it live, deploy the site folder with Vercel or another static host.
 
 The starter keeps the schema intentionally small:
 
@@ -37,7 +39,7 @@ The starter keeps the schema intentionally small:
 - `capsule`: whether it belongs in the core closet
 - `notes`
 
-The skill includes Google Sheets, Notion, Supabase, and prompt starters.
+The skill includes Google Sheets, Notion, Supabase, prompt, and local website starters.
 
 ## Run locally
 
