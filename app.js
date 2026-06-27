@@ -1,21 +1,6 @@
-const databaseOrder = ["wardrobe", "skills", "prompts", "workflows"];
+const databaseOrder = ["skills"];
 
 const databaseConfig = {
-  wardrobe: {
-    title: "Wardrobe",
-    intro: "A simple closet database for seeing what you own, what is capsule-worthy, and what is missing.",
-    search: "Search wardrobe",
-    allLabel: "all pieces",
-    filterKey: "type",
-    columns: [
-      { label: "Item", key: "name", primary: true },
-      { label: "Brand", key: "brand" },
-      { label: "Capsule", key: "capsule", format: "boolean" },
-      { label: "Type", key: "type", format: "label" },
-      { label: "Notes", key: "notes", detail: true, mobile: false }
-    ],
-    defaultSort: "wardrobe"
-  },
   skills: {
     title: "Skills",
     intro: "Small, reusable ways to build personal databases.",
@@ -27,44 +12,7 @@ const databaseConfig = {
       { label: "Use", key: "summary", detail: true },
       { label: "Download", key: "download", download: true }
     ],
-    controls: false,
-    stepsTitle: "How to use",
-    steps: [
-      "Download the skill.",
-      "Unzip the folder.",
-      "ChatGPT/Codex: Skills, New skill, Upload from your computer.",
-      "Claude Code: move the folder to ~/.claude/skills/.",
-      "Pick a wardrobe framework. Start with 18 pieces and add more later.",
-      "Use Gmail purchases if available, or item photos/a rough list if not.",
-      "Build the database in Google Sheets, Notion, or Supabase.",
-      "Make the local wardrobe site using your data.",
-      "If you want it live, deploy the site folder with Vercel or another static host."
-    ]
-  },
-  prompts: {
-    title: "Prompts",
-    intro: "Copy-ready prompts for research, writing, data, debugging, and content work.",
-    search: "Search prompts",
-    allLabel: "all prompts",
-    filterKey: "category",
-    columns: [
-      { label: "Prompt", key: "name", primary: true },
-      { label: "Best for", key: "summary", detail: true },
-      { label: "Tags", key: "tags", tags: true, mobile: false },
-      { label: "", key: "prompt", copy: true }
-    ]
-  },
-  workflows: {
-    title: "Workflows",
-    intro: "Small, reusable ways to turn personal systems into public artifacts.",
-    search: "Search workflows",
-    allLabel: "all workflows",
-    filterKey: "category",
-    columns: [
-      { label: "Workflow", key: "name", primary: true },
-      { label: "Description", key: "summary", detail: true },
-      { label: "Tags", key: "tags", tags: true }
-    ]
+    controls: false
   }
 };
 
@@ -80,7 +28,6 @@ const state = {
 const databaseNav = document.querySelector("#databaseNav");
 const pageTitle = document.querySelector("#pageTitle");
 const pageIntro = document.querySelector("#pageIntro");
-const totalCount = document.querySelector("#totalCount");
 const searchInput = document.querySelector("#searchInput");
 const sortSelect = document.querySelector("#sortSelect");
 const categoryTabs = document.querySelector("#categoryTabs");
@@ -88,9 +35,6 @@ const tableHead = document.querySelector("#tableHead");
 const tableRows = document.querySelector("#tableRows");
 const emptyState = document.querySelector("#emptyState");
 const backToTop = document.querySelector("#backToTop");
-const stepsSection = document.querySelector("#stepsSection");
-const stepsTitle = document.querySelector("#stepsTitle");
-const stepsList = document.querySelector("#stepsList");
 
 function getDatabaseFromHash() {
   const name = window.location.hash.replace("#", "");
@@ -220,16 +164,6 @@ function renderRows(rows) {
   emptyState.hidden = rows.length > 0;
 }
 
-function renderSteps() {
-  const config = getConfig();
-  const steps = config.steps || [];
-  stepsSection.hidden = steps.length === 0;
-  if (!steps.length) return;
-
-  stepsTitle.textContent = config.stepsTitle || "How to use";
-  stepsList.innerHTML = steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("");
-}
-
 function render() {
   const config = getConfig();
   const rows = getRows();
@@ -239,14 +173,12 @@ function render() {
   pageTitle.textContent = config.title;
   pageIntro.textContent = config.intro;
   searchInput.placeholder = config.search;
-  totalCount.textContent = visibleRows.length;
   document.querySelector(".controls").hidden = config.controls === false;
 
   renderNav();
   renderFilters(rows);
   renderHead();
   renderRows(visibleRows);
-  renderSteps();
 }
 
 window.addEventListener("hashchange", () => {

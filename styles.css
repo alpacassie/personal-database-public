@@ -58,10 +58,10 @@ button, input, select { color: inherit; font: inherit; }
 .page-header {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 28px;
-  margin: 56px 0 44px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  align-items: start;
+  gap: 32px;
+  margin: 56px 0 36px;
 }
 
 .eyebrow {
@@ -85,10 +85,30 @@ h1 {
   font-size: 15px;
 }
 
-.count {
+.usage-panel {
+  padding: 2px 0 0 24px;
+  border-left: 1px solid var(--border);
+}
+
+.usage-panel h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.usage-panel ol {
+  display: grid;
+  gap: 8px;
   margin: 0;
+  padding-left: 18px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
+}
+
+.usage-panel code {
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
 }
 
 .controls {
@@ -298,25 +318,6 @@ tbody tr:hover { background: var(--hover); }
   text-align: center;
 }
 
-.steps-section {
-  max-width: 680px;
-  margin-top: 28px;
-}
-
-.steps-section h2 {
-  margin: 0 0 12px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.steps-section ol {
-  margin: 0;
-  padding-left: 20px;
-  color: var(--muted);
-}
-
-.steps-section li + li { margin-top: 6px; }
-
 footer {
   display: flex;
   justify-content: space-between;
@@ -364,7 +365,10 @@ footer button:hover { color: var(--text); }
     margin: 42px 0 34px;
   }
 
-  .count { justify-self: start; }
+  .usage-panel {
+    padding: 4px 0 0;
+    border-left: 0;
+  }
 
   .controls {
     grid-template-columns: 1fr;

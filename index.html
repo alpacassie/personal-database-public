@@ -22,7 +22,14 @@
             A shareable index of practical AI, analytics, and creative workflows.
           </p>
         </div>
-        <p class="count"><span id="totalCount">0</span> entries</p>
+        <aside class="usage-panel" aria-labelledby="usageTitle">
+          <h2 id="usageTitle">How to use a skill</h2>
+          <ol>
+            <li>Download and unzip the skill.</li>
+            <li>Add it to ChatGPT/Codex Skills, or move it to <code>~/.claude/skills/</code>.</li>
+            <li>Ask it to help with that project.</li>
+          </ol>
+        </aside>
       </header>
 
       <section class="controls" aria-label="Database controls">
@@ -51,11 +58,6 @@
         </table>
         <div class="empty-state" id="emptyState" hidden><p>No matching entries.</p></div>
       </div>
-
-      <section class="steps-section" id="stepsSection" hidden>
-        <h2 id="stepsTitle">How to use</h2>
-        <ol id="stepsList"></ol>
-      </section>
 
       <footer>
         <span id="sourceNote">Public examples only · no private notes</span>

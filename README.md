@@ -6,16 +6,14 @@ Live site: <https://personal-database-public.vercel.app/#skills>
 
 ## What is inside
 
-- Wardrobe database starter
+- Skills index
 - Wardrobe database skill
-- Prompt database with copy-ready prompts
-- Workflow database for small repeatable systems
 
-## Wardrobe starter
+## Skills
 
-If someone wants to build their own wardrobe database, send them this repo and the `#skills` page.
+Send people to the `#skills` page.
 
-The download is an installable skill folder. After adding it to ChatGPT/Codex or Claude Code, they can ask it to create a wardrobe database for Google Sheets, Notion, or Supabase, then turn that data into a small wardrobe website.
+The download is an installable skill folder. The page keeps install steps general; wardrobe-specific instructions live inside the downloaded skill.
 
 Simple flow:
 
@@ -23,25 +21,9 @@ Simple flow:
 2. Unzip the folder.
 3. ChatGPT/Codex: Skills, New skill, Upload from your computer.
 4. Claude Code: move the folder to `~/.claude/skills/`.
-5. Pick a wardrobe framework. Start with 18 pieces and add more later.
-6. Use Gmail purchases if available, or item photos/a rough list if not.
-7. Build the database in Google Sheets, Notion, or Supabase.
-8. Make the local wardrobe site using your data.
-9. If you want it live, deploy the site folder with Vercel or another static host.
+5. Ask it to help with that project.
 
-The starter keeps the schema intentionally small:
-
-- `name`: the simple name you would actually use
-- `product_name`: the official product name, if useful
-- `brand`
-- `type`: top, bottom, outerwear, dress, or shoes
-- `subtype`: tank, baby tee, shirt, pants, flats, etc.
-- `color`
-- `season`
-- `capsule`: whether it belongs in the core closet
-- `notes`
-
-The skill includes Google Sheets, Notion, Supabase, prompt, and local website starters.
+The wardrobe skill includes Google Sheets, Notion, Supabase, prompt, and local website starters.
 
 ## Run locally
 
