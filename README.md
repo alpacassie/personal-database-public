@@ -21,7 +21,7 @@ Simple flow:
 2. Unzip the folder.
 3. ChatGPT/Codex: Skills, New skill, Upload from your computer.
 4. Claude Code: move the folder to `~/.claude/skills/`.
-5. Ask it to help with that project.
+5. Type the skill name in chat to trigger it.
 
 The wardrobe skill includes Google Sheets, Notion, Supabase, prompt, and local website starters.
 
