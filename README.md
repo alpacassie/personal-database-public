@@ -7,6 +7,7 @@ Live site: <https://personal-database-public.vercel.app/#skills>
 ## What is inside
 
 - Skills index
+- Hotel collection
 - Wardrobe database skill
 - Prompt library
 
