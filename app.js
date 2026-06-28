@@ -1,4 +1,4 @@
-const databaseOrder = ["skills", "prompts"];
+const databaseOrder = ["skills", "hotels", "prompts"];
 
 const databaseConfig = {
   skills: {
@@ -12,7 +12,36 @@ const databaseConfig = {
       { label: "Use", key: "summary", detail: true },
       { label: "Download", key: "download", download: true }
     ],
-    controls: false
+    controls: false,
+    panel: {
+      title: "How to use a skill",
+      items: [
+        "Download and unzip the skill.",
+        "Add it to ChatGPT/Codex Skills, or move it to ~/.claude/skills/.",
+        "Type / and the skill name in chat to trigger it."
+      ]
+    }
+  },
+  hotels: {
+    title: "Hotels",
+    intro: "A small collection of hotels I want to remember, visit, or revisit.",
+    search: "Search hotels",
+    allLabel: "all hotels",
+    filterKey: "status",
+    columns: [
+      { label: "Hotel", key: "name", primary: true },
+      { label: "Location", key: "location", detail: true },
+      { label: "Status", key: "status", format: "label" },
+      { label: "Notes", key: "notes", detail: true, mobile: false }
+    ],
+    panel: {
+      title: "How I use this collection",
+      items: [
+        "Collect hotels worth remembering.",
+        "Track location and visited status.",
+        "Keep the public version light; deeper notes stay private."
+      ]
+    }
   },
   prompts: {
     title: "Prompts",
@@ -25,7 +54,15 @@ const databaseConfig = {
       { label: "Use", key: "summary", detail: true },
       { label: "Copy", key: "prompt", copy: true }
     ],
-    controls: false
+    controls: false,
+    panel: {
+      title: "How to use a prompt",
+      items: [
+        "Copy the prompt.",
+        "Paste it into ChatGPT, Claude, or Codex.",
+        "Replace details with your own database topic."
+      ]
+    }
   }
 };
 
@@ -48,6 +85,9 @@ const tableHead = document.querySelector("#tableHead");
 const tableRows = document.querySelector("#tableRows");
 const emptyState = document.querySelector("#emptyState");
 const backToTop = document.querySelector("#backToTop");
+const usagePanel = document.querySelector(".usage-panel");
+const usageTitle = document.querySelector("#usageTitle");
+const usageSteps = document.querySelector(".usage-panel ol");
 
 function getDatabaseFromHash() {
   const name = window.location.hash.replace("#", "");
@@ -82,6 +122,18 @@ function renderNav() {
       return `<a class="database-link${active}" href="#${name}">${databaseConfig[name].title}</a>`;
     })
     .join("");
+}
+
+function renderPanel() {
+  const panel = getConfig().panel;
+  if (!panel) {
+    usagePanel.hidden = true;
+    return;
+  }
+
+  usagePanel.hidden = false;
+  usageTitle.textContent = panel.title;
+  usageSteps.innerHTML = panel.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 }
 
 function renderFilters(rows) {
@@ -189,6 +241,7 @@ function render() {
   document.querySelector(".controls").hidden = config.controls === false;
 
   renderNav();
+  renderPanel();
   renderFilters(rows);
   renderHead();
   renderRows(visibleRows);
@@ -198,7 +251,9 @@ window.addEventListener("hashchange", () => {
   state.database = getDatabaseFromHash();
   state.filter = "all";
   state.search = "";
+  state.sort = "featured";
   searchInput.value = "";
+  sortSelect.value = "featured";
   render();
 });
 
